@@ -12,10 +12,13 @@ export default function Login({ onLogin }) {
     setErr("");
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3000/api/auth/login", {
-        username,
-        password,
-      });
+      const res = await axios.post(
+        "https://api.bilsypdev.site/api/auth/login",
+        {
+          username,
+          password,
+        }
+      );
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
       if (onLogin) onLogin(res.data.user);

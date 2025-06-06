@@ -26,7 +26,7 @@ export default function Absensi() {
       if (!user) return;
       try {
         const res = await axios.get(
-          `http://localhost:3000/api/absensi?user_id=${user.id}`
+          `https://api.bilsypdev.site/api/absensi?user_id=${user.id}`
         );
         setRiwayat(res.data);
       } catch {
@@ -43,7 +43,7 @@ export default function Absensi() {
     setErr("");
     setLoading(true);
     try {
-      await axios.post("http://localhost:3000/api/absensi", {
+      await axios.post("https://api.bilsypdev.site/api/absensi", {
         user_id: user.id,
         tanggal: input.tanggal,
         keterangan: input.keterangan,

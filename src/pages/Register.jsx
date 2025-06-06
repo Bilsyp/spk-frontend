@@ -19,7 +19,7 @@ export default function Register() {
     setOk("");
     setLoading(true);
     try {
-      await axios.post("http://localhost:3000/api/auth/register", form);
+      await axios.post("https://api.bilsypdev.site/api/auth/register", form);
       setOk("Registrasi berhasil! Silakan login.");
       setForm({ username: "", password: "", nama: "", role: "karyawan" });
     } catch (error) {
